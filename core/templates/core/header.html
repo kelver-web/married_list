@@ -1,0 +1,44 @@
+<!-- header-->
+{% load static %}
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="logo-img">
+                            <a href="{% url 'home' %}">
+                                <img src="{% static 'img/logo.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 d-flex justify-content-center">
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation"
+                                    class="d-flex flex-wrap justify-content-center align-items-center gap-2">
+                                    <li><a class="active" href="{% url 'home' %}">home</a></li>
+                                    <li><a href="{% url 'our_love_story' %}">Nossa História</a></li>
+                                    <li><a href="{% url 'gallery' %}">Galeria</a></li>
+                                    <li><a href="{% url 'gift_list' %}">Lista de Presentes</a></li>
+                                    <li><a href="{% url 'contact' %}">Contato</a></li>
+                                    {% if not user.is_authenticated %}
+                                        <li><a href="{% url 'guest_login' %}">Login</a></li>
+                                        <li><a href="{% url 'guest_register' %}">Cadastrar</a></li>
+                                    {% endif %}
+                                    {% if user.is_authenticated %}
+                                        <li><a href="{% url 'guest_logout' %}">Sair</a></li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--/ header-->

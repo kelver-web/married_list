@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block header %}
+{% include 'core/header.html' %}
+{% endblock %}
+
+{% block gallery_area %}
+<!-- bradcam_area  -->
+<div class="bradcam_area text-center bradcam_bg overlay3">
+    <div class="bradcam_text">
+        <h3>Album de Fotos</h3>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+
+<!-- gallery_area  -->
+<div class="gallery_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center">
+                    <h3>Galeria. Fotos</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container p-0">
+        <div class="row justify-content-center grid no-gutters">
+            <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                <div class="single_gallery">
+                    <img src="{% static 'img/gallery/jiujitsu1.jpeg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                <div class="single_gallery">
+                    <img src="{% static 'img/gallery/jiujitsu2.jpeg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                <div class="single_gallery">
+                    <img src="{% static 'img/gallery/moment1.jpeg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                <div class="single_gallery">
+                    <img src="{% static 'img/gallery/moment2.jpeg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                <div class="single_gallery">
+                    <img src="{% static 'img/gallery/moment3.jpeg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                <div class="single_gallery">
+                    <img src="{% static 'img/gallery/moment4.jpeg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                <div class="single_gallery">
+                    <img src="{% static 'img/gallery/moment5.jpeg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-6 grid-item">
+                <div class="single_gallery">
+                    <img src="{% static 'img/gallery/moment6.jpeg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "core/footer.html" %}
+{% endblock %}

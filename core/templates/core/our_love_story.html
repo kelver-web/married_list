@@ -1,0 +1,139 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+{% block header %}
+{% include 'core/header.html' %}
+{% endblock %}
+
+
+{% block our_love_story %}
+<div class="bradcam_area text-center bradcam_bg overlay3">
+    <div class="bradcam_text">
+        <h3>Nossa História</h3>
+    </div>
+</div>
+
+<div class="love_story_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section_title text-center">
+                    <img src="{% static 'img/banner/flowers.png' %}" alt="">
+                    <h3>Nossa. Historia. de Amor</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-md-6 col-lg-4">
+                <div class="single_lover_story text-center">
+                    <div class="story_thumb">
+                        <img src="{% static 'img/gallery/perfil2.jpeg' %}" alt="">
+                    </div>
+                    <span>Noivo</span>
+                    <h3>Leo</h3>
+
+                    <input type="checkbox" id="noivoToggle" class="toggle">
+                    <p class="lover-text">
+                        Eu sou o Leonardo tenho 23 anos e sou apaixonado por esportes de todos os tipos. Competitivo
+                        de natureza, jogo vôlei, futevôlei, futebol e até já me aventurei no jiu-jítsu. Ao mesmo tempo
+                        em que tenho esse espírito esportivo, sou tranquilo e adoro aproveitar os pequenos prazeres da
+                        vida: um cinema, uma praia pela manhã no final de semana ou a calmaria do campo, onde passei boa
+                        parte da minha vida. Eu também sonho em ter o meu próprio negócio, e traz no coração a
+                        simplicidade, a leveza e a determinação de quem sabe aproveitar cada momento.
+                    </p>
+                    <label for="noivoToggle" class="toggle-btn"></label>
+
+                    <div class="social_links">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/_ssleo?igsh=MWE0bm82aW5oeTc1bQ==" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-lg-4">
+                <div class="weding_time_line text-center">
+                    <div class="single_time_line">
+                        <h3>Encontro rápido</h3>
+                        <p>
+                        <p>Às vezes, basta um momento breve para que o coração reconheça sua outra metade. Nosso
+                            encontro foi assim: rápido, mas inesquecível.</p>
+                        </p>
+                    </div>
+                    <div class="single_time_line">
+                        <h3>Ele propôs</h3>
+                        <p>Amor, que tal começarmos nossa vida juntos com esse presente? Vai ser um marco da nossa nova
+                            história.</p>
+                    </div>
+                    <div class="single_time_line">
+                        <h3>Uma História de Amor</h3>
+                        <p class="texto-limitado" id="historia">
+                            Dizem que o destino sempre encontra uma forma de unir duas pessoas, e com a gente não foi
+                            diferente. Por muito tempo, frequentamos os mesmos lugares, até a mesma academia, mas nunca
+                            havíamos trocado sequer uma palavra. Até que, numa noite especial, depois de um show do
+                            Garota White, uma simples resposta em um story mudou o rumo das nossas vidas.
+
+                            Entre conversas e risadas, a vida nos aproximou ainda mais em um momento delicado, mostrando
+                            que até nas dificuldades o coração encontra motivos para florescer. A amizade nasceu,
+                            combinamos de ir a um show do Nattanzinho (que, ironicamente, nunca aconteceu) e, mesmo sem
+                            os shows, vivemos a melhor apresentação: a do nosso próprio amor. Viramos caseiros, e dentro
+                            dessa simplicidade descobrimos a felicidade verdadeira.
+
+                            Ele foi se abrindo, eu decidi dar uma chance ao meu coração, e assim fomos escrevendo nossa
+                            história — feita de cumplicidade, carinho e a certeza de que encontramos no outro o nosso
+                            lar. Um pouco mais de dois anos se passaram, e hoje decidimos dar o próximo passo:
+                            transformar esse amor em uma vida inteira juntos, como marido e mulher.
+
+                            Com muito carinho, criamos essa lista de presentes para que cada detalhe desse novo capítulo
+                            seja ainda mais especial.
+                        </p>
+                        <button class="toggle-btn " id="toggleBtn">Ler mais</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <div class="single_lover_story text-center">
+                    <div class="story_thumb">
+                        <img src="{% static 'img/gallery/perfil1.jpeg' %}" alt="">
+                    </div>
+                    <span>Noiva</span>
+                    <h3>Joyci</h3>
+
+                    <input type="checkbox" id="noivaToggle" class="toggle">
+                    <p class="lover-text">
+                        Eu sou a Joyci, tenho 22 anos e desde os meus dois aninhos o esporte já fazia parte da minha
+                        vida. Ao longo do tempo, me aventurei em mais de seis modalidades, passando pela ginástica
+                        artística, balé e capoeira, até me apaixonar pelo jiu-jítsu. Foi através do esporte que
+                        encontrei saúde, autoestima e propósito. Aos 17 anos comecei publicidade e propaganda, mas
+                        descobri aos 18 que o que eu gostaria de fazer era educação física, que me deu a chance de
+                        transformar minha vida e inspirar outras pessoas. Em 2022 comecei a compartilhar nas redes
+                        sociais minha evolução, e desde então sigo sonhando alto: ajudar meu irmão, conhecer o mundo,
+                        mergulhar em novas culturas e construir o meu próprio império. Sou intensa, ambiciosa e nunca
+                        paro de sonhar.
+                    </p>
+                    <label for="noivaToggle" class="toggle-btn"></label>
+
+                    <div class="social_links">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/joyciarllianne?igsh=MTN4OGNwNjIxc2dneQ%3D%3D&utm_source=qr" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section_title text-center">
+        <img src="{% static 'img/banner/flowers.png' %}" alt="">
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "core/footer.html" %}
+{% endblock %}
