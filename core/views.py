@@ -91,7 +91,7 @@ def contact(request):
             return redirect("contact")
     else:
         form = ContactForm()
-    return render(request, "core/contact.html", {"form": form})
+    return render(request, "core/contact_area.html", {"form": form})
 
 def guest_register(request):
     if request.method == 'POST':

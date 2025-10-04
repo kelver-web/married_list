@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
+from core.models import ContactMessage
+
 
 
 class GuestRegisterForm(UserCreationForm):
@@ -54,38 +56,26 @@ class GuestLoginForm(AuthenticationForm):
 
 
 
-class ContactForm(forms.Form):
-    name = forms.CharField(
-        max_length=100,
-        widget=forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Insira o seu nome'
-        }),
-        error_messages={'required': 'Por favor, insira seu nome'}
-    )
-    email = forms.EmailField(
-        widget=forms.EmailInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Email'
-        }),
-        error_messages={
-            'required': 'Por favor, insira seu email',
-            'invalid': 'Insira um email válido'
-        }
-    )
-    subject = forms.CharField(
-        max_length=150,
-        widget=forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Insira o assunto'
-        }),
-        error_messages={'required': 'Por favor, insira o assunto'}
-    )
-    message = forms.CharField(
-        widget=forms.Textarea(attrs={
-            'class': 'form-control w-100',
-            'placeholder': 'Entre com a sua mensagem',
-            'rows': 9
-        }),
-        error_messages={'required': 'Por favor, insira a mensagem'}
-    )
+class ContactForm(forms.ModelForm):
+   class Meta:
+         model = ContactMessage
+         fields = ['name', 'email', 'subject', 'message']
+         widgets = {
+              'name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Seu nome'
+              }),
+              'email': forms.EmailInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Seu e-mail'
+              }),
+                'subject': forms.TextInput(attrs={
+                    'class': 'form-control',
+                    'placeholder': 'Assunto'
+                }),
+              'message': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Sua mensagem',
+                'rows': 5
+              }),
+         }
