@@ -20,7 +20,6 @@
         <table class="table table-hover align-middle mb-0">
             <thead class="table-primary text-center">
                 <tr>
-                    <th scope="col" style="width: 10%">Imagem</th>
                     <th scope="col" style="width: 20%">Presente</th>
                     <th scope="col" style="width: 40%">Descrição</th>
                     <th scope="col" style="width: 15%">Link</th>
@@ -30,15 +29,6 @@
             <tbody>
                 {% for gift in gifts %}
                 <tr>
-                    <!-- Imagem do presente -->
-                    <td class="text-center">
-                        {% if gift.image %}
-                        <img src="{{ gift.image.url }}" alt="{{ gift.name }}" class="img-fluid rounded shadow-sm"
-                            style="max-width: 80px; height: auto;" loading="lazy">
-                        {% else %}
-                        <i class="fa fa-gift fa-2x text-primary"></i>
-                        {% endif %}
-                    </td>
 
                     <!-- Nome do presente -->
                     <td class="fw-bold">
