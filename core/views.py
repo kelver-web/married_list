@@ -30,26 +30,6 @@ def our_love_story(request):
 def gallery(request):
     return render(request, 'core/gallery_area.html')
 
-
-@login_required(login_url='guest_login')
-def contact(request):
-    if request.method == "POST":
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        subject = request.POST.get("subject")
-        message = request.POST.get("message")
-
-        # aqui você pode salvar em um model ou enviar email
-        if not all([name, email, subject, message]):
-            return JsonResponse({"status": "error", "message": "Todos os campos são obrigatórios"}, status=400)
-
-        # se tudo certo
-        return JsonResponse({"status": "ok", "message": "Mensagem enviada com sucesso"})
-
-    # GET apenas renderiza o template
-    return render(request, 'core/contact_area.html')
-
-
 @login_required(login_url='guest_login')
 def reserve_gift(request, gift_id):
     gift = get_object_or_404(Gift, id=gift_id)
@@ -101,38 +81,17 @@ def reserve_gift(request, gift_id):
 
     return redirect('gift_list')
 
-
-
 @require_http_methods(["GET", "POST"])
 def contact(request):
-    if request.method == 'POST' and request.headers.get('x-requested-with') == 'XMLHttpRequest':
+    if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            contact_msg = ContactMessage.objects.create(
-                name=form.cleaned_data['name'],
-                email=form.cleaned_data['email'],
-                subject=form.cleaned_data['subject'],
-                message=form.cleaned_data['message']
-            )
-            try:
-                send_mail(
-                    f"Contato: {contact_msg.subject}",
-                    f"Mensagem de {contact_msg.name} ({contact_msg.email}):\n\n{contact_msg.message}",
-                    settings.DEFAULT_FROM_EMAIL,
-                    ["Joyciarllianne@gmail.com", "Leonardosilvaferreira21@gmail.com"],
-                    fail_silently=False,
-                )
-            except Exception as e:
-                return JsonResponse({'status': 'error', 'msg': 'Erro ao enviar e-mail.'}, status=500)
-
-            return JsonResponse({'status': 'success', 'msg': 'Mensagem enviada com sucesso!'})
-        else:
-            return JsonResponse({'status': 'error', 'msg': 'Por favor corrija os erros no formulário.', 'errors': form.errors}, status=400)
-
-    # GET normal: renderiza template com form
-    form = ContactForm()
-    return render(request, 'core/contact_area.html', {'form': form})
-
+            form.save()
+            messages.success(request, "Mensagem enviada com sucesso!")
+            return redirect("contact")
+    else:
+        form = ContactForm()
+    return render(request, "core/contact.html", {"form": form})
 
 def guest_register(request):
     if request.method == 'POST':
