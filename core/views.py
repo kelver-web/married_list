@@ -81,7 +81,8 @@ def reserve_gift(request, gift_id):
 
     return redirect('gift_list')
 
-@require_http_methods(["GET", "POST"])
+
+@login_required(login_url='guest_login')
 def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
