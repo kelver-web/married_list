@@ -33,6 +33,20 @@ def gallery(request):
 
 @login_required(login_url='guest_login')
 def contact(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
+
+        # aqui você pode salvar em um model ou enviar email
+        if not all([name, email, subject, message]):
+            return JsonResponse({"status": "error", "message": "Todos os campos são obrigatórios"}, status=400)
+
+        # se tudo certo
+        return JsonResponse({"status": "ok", "message": "Mensagem enviada com sucesso"})
+
+    # GET apenas renderiza o template
     return render(request, 'core/contact_area.html')
 
 
