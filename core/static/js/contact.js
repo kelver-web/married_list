@@ -4,7 +4,7 @@ $(document).ready(function(){
 
         jQuery.validator.addMethod('answercheck', function (value, element) {
             return this.optional(element) || /^\bcat\b$/.test(value)
-        }, "type the correct answer -_-");
+        }, "Digite a resposta correta");
 
         // validate contactForm form
         $(function() {
