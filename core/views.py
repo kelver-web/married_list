@@ -86,13 +86,24 @@ def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            contact_instance = form.save()  # salva no banco
+            
+            # Enviar email para quem enviou a mensagem
+            user_email = contact_instance.email  # supondo que o ContactForm tem o campo 'email'
+            subject = "Recebemos sua mensagem!"
+            message = f"Olá {contact_instance.name},\n\nRecebemos sua mensagem e entraremos em contato em breve.\n\nObrigado,\nJoyciarllianne & Leonardo 💖"
+            from_email = None  # usa DEFAULT_FROM_EMAIL
+            recipient_list = [user_email]
+            
+            send_mail(subject, message, from_email, recipient_list)
+            
             messages.success(request, "Mensagem enviada com sucesso!")
             return redirect("contact")
         else:
             messages.error(request, "Erro ao enviar mensagem. Por favor, verifique os campos abaixo e tente novamente.")
     else:
         form = ContactForm()
+    
     return render(request, "core/contact_area.html", {"form": form})
 
 def guest_register(request):
