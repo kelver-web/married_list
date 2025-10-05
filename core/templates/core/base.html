@@ -30,27 +30,7 @@
 </head>
 
 <body>
-
-    {% if messages %}
-    <div class="custom-toast-container">
-        {% for message in messages %}
-        <div class="custom-toast {{ message.tags }}">
-            <span class="toast-icon">
-                {% if message.tags == 'success' %}✅{% elif message.tags == 'warning' %}⚠️{% elif message.tags == 'error'
-                %}❌{% else %}ℹ️{% endif %}
-            </span>
-            <div class="toast-message">
-                {{ message }}
-            </div>
-            <button class="toast-close">&times;</button>
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-
-
-
-
+    
     {% block header %}{% endblock %}
     {% block gift_list %}{% endblock %}
     {% block slider_area %}{% endblock %}
@@ -91,9 +71,9 @@
     <script src="{% static 'js/plugins.js' %}"></script>
 
     <!--contact js-->
-    <script src="{% static 'js/contact.js' %}"></script>
+    <!-- <script src="{% static 'js/contact.js' %}"></script> -->
     <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
-    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <!-- <script src="{% static 'js/jquery.form.js' %}"></script> -->
     <script src="{% static 'js/jquery.validate.min.js' %}"></script>
     <script src="{% static 'js/mail-script.js' %}"></script>
 

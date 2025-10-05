@@ -34,7 +34,6 @@ def gallery(request):
 def reserve_gift(request, gift_id):
     gift = get_object_or_404(Gift, id=gift_id)
     
-
     if gift.is_reserved:
         messages.warning(request, "Esse presente já foi reservado por outro usuário.")
     else:
@@ -90,6 +89,8 @@ def contact(request):
             form.save()
             messages.success(request, "Mensagem enviada com sucesso!")
             return redirect("contact")
+        else:
+            messages.error(request, "Erro ao enviar mensagem. Por favor, verifique os campos abaixo e tente novamente.")
     else:
         form = ContactForm()
     return render(request, "core/contact_area.html", {"form": form})

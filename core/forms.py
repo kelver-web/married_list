@@ -54,8 +54,6 @@ class GuestLoginForm(AuthenticationForm):
     )
 
 
-
-
 class ContactForm(forms.ModelForm):
    class Meta:
          model = ContactMessage

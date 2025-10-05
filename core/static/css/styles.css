@@ -5518,18 +5518,3 @@ h6 {
   object-fit: cover;
 }
 
-ul.errorlist {
-    color: red;          /* força vermelho */
-    margin: 0;
-    padding: 0;
-    list-style: none;    /* remove bolinhas */
-    border: red 1px solid; /* borda vermelha */
-    border-radius: 5px;  /* borda arredondada */
-    background: #ffe6e6; /* fundo vermelho claro */
-    padding: 10px;       /* espaçamento interno */
-    margin-bottom: 15px; /* espaço abaixo da lista */
-}
-
-ul.errorlist li {
-    color: red;          /* garante que o li fique vermelho */
-}

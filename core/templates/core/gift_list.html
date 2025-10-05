@@ -12,6 +12,20 @@
         <h3>Lista de Presentes</h3>
     </div>
 </div>
+<div class="slider_area mt-4">
+    <div>
+        <div class="slider_text text-center">
+            <div class="text_inner">
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="container-fluid my-5 px-5">
     <h2 class="text-center mb-5">🎁 Lista de Presentes</h2>
@@ -79,10 +93,10 @@
 
 <!-- Seção do QR code extra -->
 <div class="mt-5 text-center">
-  <h4>Não quer escolher da lista de presentes?</h4>
-  <p>Você pode acessar diretamente usando o QR code abaixo:</p>
-  <!-- Cole a imagem do QR code aqui -->
-  <img src="{% static 'img/gallery/qr.jpeg' %}" alt="QR Code Extra" style="max-width:250px;" class="mb-4">
+    <h4>Não quer escolher da lista de presentes?</h4>
+    <p>Você pode acessar diretamente usando o QR code abaixo:</p>
+    <!-- Cole a imagem do QR code aqui -->
+    <img src="{% static 'img/gallery/qr.jpeg' %}" alt="QR Code Extra" style="max-width:250px;" class="mb-4">
 </div>
 {% endblock %}
 
